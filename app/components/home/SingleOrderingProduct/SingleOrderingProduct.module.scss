@@ -1,0 +1,21 @@
+@import "/styles/variables.modules.scss";
+
+.singleOrderingProduct {
+    display: grid;
+    grid-template-columns: 4fr 1fr 1fr;
+    padding: 0 10px;
+    gap: 10px;
+    @media (min-width: $md) {
+      grid-template-columns: 4fr 1fr 2fr;
+    }
+
+  .title,
+  .quantity,
+  .price {
+    @include setFontSizeAndWeight(16px, 400);
+    padding: 3px 0;
+    @media (min-width: $sm) {
+      font-size: 24px;
+    }
+  }
+}

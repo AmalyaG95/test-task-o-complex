@@ -1,0 +1,70 @@
+@import "/styles/variables.modules.scss";
+
+.addingProducts {
+  margin-top: 243px;
+  .container {
+    margin: 0 14px 0 14px;
+    padding: 18px 11px 14px 11px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    @include borderRadiusAndBackground($lightGray_2);
+    @media (min-width: $sm) {
+      margin: 0 45px 0 45px;
+    }
+
+    @media (min-width: $md) {
+      max-width: 708px;
+      margin: 0 auto;
+    }
+
+    .title {
+      text-align: center;
+      @include setFontSizeAndWeight(36px, 400);
+      @media (min-width: $md) {
+        text-align: start;
+      }
+    }
+
+    .form {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+      @media (min-width: $md) {
+        flex-direction: row;
+      }
+
+      button.orderButton {
+        @include buttonStyles;
+        @media (min-width: $md) {
+          width: 16.75rem;
+        }
+      }
+
+      .error {
+        position: absolute;
+        color: $redColor;
+        top: 61px;
+        left: 11px;
+        @include setFontSizeAndWeight(12px, 600);
+        @media (min-width: $md) {
+          top: -18px;
+        }
+      }
+
+      input {
+        width: 100%;
+        padding: 12px;
+        color: $lightGray;
+        text-align: center;
+        @include borderRadiusAndBackground($backgroundColor);
+        @include setFontSizeAndWeight(33px, 400);
+
+        @media (min-width: $md) {
+          width: 25rem;
+        }
+      }
+    }
+  }
+}

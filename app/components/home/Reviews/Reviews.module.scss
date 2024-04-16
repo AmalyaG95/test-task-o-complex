@@ -1,0 +1,23 @@
+@import "/styles/variables.modules.scss";
+
+.reviews {
+  margin-top: 97px;  
+    
+  .container {    
+    display: flex;
+    flex-direction: column;
+    gap: 22px;
+    @include mobileContainerStyles;
+
+    @media (min-width: $md) {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 34px;
+    }
+
+    @media (min-width: $lg) {
+      max-width: 970px;
+      margin: 0 auto;
+    }
+  }
+}

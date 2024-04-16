@@ -1,0 +1,31 @@
+@import "/styles/variables.modules.scss";
+
+.header {
+  width: 100%;
+
+  .container {
+    margin: 13px 14px 0 14px;
+    padding: 6px 0;
+    @include borderRadiusAndBackground($gray);
+
+    @media (min-width: $sm) {
+      margin: 30px 45px 0 45px;
+    }
+
+    @media (min-width: $md) {
+      margin: 45px 90px 0 90px;
+    }
+
+    @media (min-width: $lg) {
+      margin: 55px 50px 0 50px;
+    }
+
+    @media (min-width: $xxl) {
+      margin: 55px 249px 0 229px;
+    }
+
+    .title {
+      @include h1Styles;
+    }
+  }
+}

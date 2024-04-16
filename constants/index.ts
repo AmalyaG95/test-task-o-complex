@@ -1,0 +1,1 @@
+export const ORDER_SUCCESS_MESSAGE = 'Заказ подтвержден';

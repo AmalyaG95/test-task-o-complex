@@ -1,0 +1,31 @@
+@import "/styles/variables.modules.scss";
+
+.modalContainer {
+  @include modalContainerStyles;
+  .modalCustom {
+    @include modalCustomStyles(50%, 50%);
+    .orderMessageModal {
+      @include actualModalStyles(unset);
+      padding: 35px 20px 30px 20px;
+      position: relative;
+      border-radius: 15px;
+      .title {
+        @include setFontSizeAndWeight(36px, 400);
+        text-align: center;
+      }
+      .closeXBtn {
+        position: absolute;
+        top: 5px;
+        right: 5px;
+      }
+      .okBtnCtn {
+        display: flex;
+        justify-content: center;
+        .okBtn {
+          @include buttonStyles;
+          margin-top: 20px;
+        }
+      }
+    }
+  }
+}

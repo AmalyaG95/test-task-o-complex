@@ -1,0 +1,18 @@
+@import "/styles/variables.modules.scss";
+
+.container {
+  padding: 24px 19px 24px 20px;
+  @include borderRadiusAndBackground($lightGray_2);
+  @include setFontSizeAndWeight(24px, 400);
+  @media (min-width: $lg) {
+   padding: 20px 50px 50px 27px;
+  }
+
+  h1 {
+    @include setFontSizeAndWeight(24px, 400);
+  }
+
+  p:first-of-type {
+    margin-top: 40px;
+  }
+}

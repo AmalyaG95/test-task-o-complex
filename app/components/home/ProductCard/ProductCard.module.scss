@@ -1,0 +1,89 @@
+@import "/styles/variables.modules.scss";
+
+.productCard {
+  padding: 10px 11px 17px 11px;
+  @include borderRadiusAndBackground($lightGray_2);
+  @media (min-width: $lg) {
+    padding: 10px 10px 17px 10px;
+  }
+
+  .imgWrapper {
+    width: 100%;
+    height: 366px;
+    border-radius: 15px;
+    overflow: hidden;
+  }
+  .infoContainer {
+    @include columnFlex(10px);
+
+    .buyPanel {
+      display: flex;
+      gap: 11px;
+      justify-content: center;
+      margin-top: 13px;
+      @media (min-width: $md) {
+        margin-top: 33px;
+      }
+
+      input {
+        width: 9.3125rem;
+        @include borderRadiusAndBackground($backgroundColor);
+        @media (min-width: $lg) {
+          width: 7.7rem;
+        }
+      }
+
+      button.minus,
+      button.plus {
+        width: 4.25rem;
+        height: 4.25rem;
+        @include borderRadiusAndBackground($backgroundColor);
+      }
+
+      button.plus,
+      button.minus,
+      input {
+        color: $lightGray;
+        text-align: center;
+        @include setFontSizeAndWeight(36px, 400);
+      }
+    }
+
+    .titleAndDesc {
+      .description {
+        min-height: 232px;
+        margin-top: 15px;
+        padding-right: 45px;
+        word-wrap: break-word;
+        @include setFontSizeAndWeight(24px, 400);
+        @include breakEveryChar;
+      }
+
+      .title {
+        min-height: 88px;
+        @include breakEveryChar;
+        margin-top: 15px;
+      }
+    }
+
+    .title,
+    .price {
+      text-align: center;
+      @include setFontSizeAndWeight(36px, 400);
+    }
+  }
+
+  .imgWrapper {
+    width: 100%;
+    height: 366px;
+    position: relative;
+  }
+
+  .buyButton {
+    @include buttonStyles;
+    margin-top: 13px;
+    @media (min-width: $md) {
+      margin-top: 33px;
+    }
+  }
+}

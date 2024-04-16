@@ -1,0 +1,19 @@
+@import "/styles/variables.modules.scss";
+
+.infinite-scroll-component {
+  @include mobileContainerStyles;
+  @include columnFlex(18px);
+
+  @media (min-width: $md) {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 35px;
+    row-gap: 42px;
+  }
+
+  @media (min-width: $lg) {
+    max-width: 982px;
+    margin: 0 auto;
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}

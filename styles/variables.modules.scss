@@ -1,0 +1,132 @@
+// colors
+$backgroundColor: #222;
+$black: #000;
+$gray: #777;
+$lightGray: #f0f0f0;
+$lightGray_2: #d9d9d9;
+$redColor: red;
+$darkGreen: rgba(80, 95, 81, 0.5);
+
+// breakpoints
+// mobile
+$sm: 576px;
+$md: 768px;
+
+// tablet
+$lg: 992px;
+$xl: 1200px;
+
+// desktop
+$xxl: 1400px;
+
+// mixins
+// text mixins
+@mixin h1Styles {
+  color: $lightGray;
+  text-align: center;
+  padding: 0 20px;
+  @include setFontSizeAndWeight(40px, 400);
+
+  @media (min-width: $md) {
+    font-size: 56px;
+    padding: 0 30px;
+  }
+
+  @media (min-width: $lg) {
+    font-size: 76px;
+    padding: 0 30px;
+  }
+
+  @media (min-width: $xxl) {
+    font-size: 96px;
+    padding: 0 30px;
+  }
+}
+
+@mixin setFontSizeAndWeight($fontSize, $fontWeight) {
+  font-size: $fontSize;
+  font-weight: $fontWeight;
+}
+
+@mixin breakEveryChar {
+  word-break: break-all;
+  overflow-wrap: break-word;
+}
+
+// end text mixins
+
+// flex mixins
+@mixin columnFlex($gap) {
+  display: flex;
+  flex-direction: column;
+  gap: $gap;
+}
+
+// end flex mixins
+
+@mixin mobileContainerStyles {
+  margin: 0 14px;
+
+  @media (min-width: $sm) {
+    margin: 0 45px 0 45px;
+  }
+
+  @media (min-width: $md) {
+    margin: 0 90px 0 90px;
+  }
+
+  @media (min-width: $lg) {
+    margin: 0 50px 0 50px;
+  }
+}
+
+@mixin setWidthHeight($width, $height) {
+  width: $width;
+  height: $height;
+}
+
+@mixin buttonStyles {
+  width: 100%;
+  padding: 12px;
+  color: $lightGray;
+  text-align: center;
+  @include borderRadiusAndBackground($backgroundColor);
+  @include setFontSizeAndWeight(36px, 400);
+}
+
+@mixin borderRadiusAndBackground($backgroundColor) {
+  border-radius: 15px;
+  background-color: $backgroundColor;
+}
+
+//modal mixins
+@mixin modalContainerStyles {
+  width: 100%;
+  height: 100vh;
+  background: $darkGreen;
+  position: fixed;
+  z-index: 9999999;
+  top: 0;
+  left: 0;
+  overflow: hidden;
+}
+
+@mixin modalCustomStyles($top, $left) {
+  position: absolute;
+  top: $top;
+  left: $left;
+  transform: translate(-50%, -50%);
+  min-width: 240px;
+  border-radius: 7px;
+  color: $black;
+}
+
+@mixin actualModalStyles($width) {
+  margin: auto;
+  color: $black;
+  width: $width;
+  background-color: $lightGray_2;
+  @media (max-width: 360px) {
+    width: 330px;
+  }
+}
